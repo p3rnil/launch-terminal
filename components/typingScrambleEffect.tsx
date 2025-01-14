@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, useState, useMemo, ReactNode, ReactElement } from "react";
+import React, { useRef, useState, useMemo, ReactNode, ReactElement } from 'react';
 import { gsap, useGSAP, SplitText } from '@/gsap'
 import { cn } from '@/utils'
 
@@ -71,7 +71,7 @@ const TypingScrambleEffect: React.FC<typingScrambleEffectProps> = ({ children })
 
   const init = () => {
     references.current.forEach((element) => {
-      const splitted = new SplitText(element, { type: "words,chars", wordsClass: "word", charsClass: "char" })
+      const splitted = new SplitText(element, { type: 'words,chars', wordsClass: 'word', charsClass: 'char' })
       setTexts(prev => {
         return [...prev, {
           splitted: splitted,
@@ -93,7 +93,7 @@ const TypingScrambleEffect: React.FC<typingScrambleEffectProps> = ({ children })
 
     const childCount = React.Children.count(nodes);
     if (childCount !== 1) {
-      throw new Error("TypingScrambleEffect requires only child. Only one child was provided.");
+      throw new Error('TypingScrambleEffect requires only child. Only one child was provided.');
     }
 
     const childrenArray = React.Children.toArray(children)

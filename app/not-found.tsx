@@ -1,4 +1,4 @@
-import ScrambleTextEffect from "@/components/typingScrambleEffect";
+import ScrambleTextEffect from '@/components/typingScrambleEffect';
 
 export default function NotFound() {
   return (

@@ -17,7 +17,7 @@ const LocalDate: React.FC<LocalDateProps> = ({ format }) => {
   }, []);
 
   return (
-    <time className="text-[0.6rem] font-medium content-center text-left md:text-right" suppressHydrationWarning>
+    <time className='text-[0.6rem] font-medium content-center text-left md:text-right' suppressHydrationWarning>
       {new Date(date).toLocaleString('en-US', format).replace(/,/g, '')}
     </time>
   );

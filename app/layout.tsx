@@ -1,20 +1,16 @@
 import Link from 'next/link'
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react'
+import { JetBrains_Mono } from 'next/font/google';
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import localFont from 'next/font/local';
 import SmoothScroll from '@/components/smoothScroll'
 import LocalDate from '@/components/localDate'
 import './globals.css';
 
-const jetBrainsMono = localFont({
-  src: [
-    {
-      path: '../public/fonts/JetBrainsMono-Regular.woff',
-      weight: '400',
-    },
-  ],
-  variable: '--font-jetbrains-mono',
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ['latin'], // Puedes agregar más subsets si necesitas
+  weight: ['400', '700'], // Especifica los pesos necesarios
+  display: 'swap', // Usa swap para mejorar la carga
 });
 
 export const metadata: Metadata = {
@@ -22,14 +18,10 @@ export const metadata: Metadata = {
   description: 'Type effect example',
 };
 
-export default async function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default async function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang='en'>
-      <body className={`${jetBrainsMono.variable} select-none font-sans antialiased`}>
+      <body className={`${jetBrainsMono.className} select-none antialiased`}>
         <SmoothScroll>
           <SpeedInsights />
           <Analytics />
